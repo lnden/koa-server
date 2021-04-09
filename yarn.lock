@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@babel/runtime@^7.8.3":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@types/node@*":
   version "14.14.37"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
@@ -253,6 +260,11 @@ cli-boxes@^1.0.0:
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
   integrity sha1-T6kXw+WclKAEzWH47lCdplFocUM=
 
+cluster-key-slot@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.1.0.tgz#30474b2a981fb12172695833052bc0d01336d10d"
+  integrity sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw==
+
 co-body@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/co-body/-/co-body-6.1.0.tgz#d87a8efc3564f9bfe3aced8ef5cd04c7a8766547"
@@ -263,7 +275,14 @@ co-body@^6.0.0:
     raw-body "^2.3.3"
     type-is "^1.6.16"
 
-co@^4.6.0:
+co-wrap-all@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/co-wrap-all/-/co-wrap-all-1.0.0.tgz#370ae3e8333510a53f6b2f7fdfbe4568a11b7ecf"
+  integrity sha1-Nwrj6DM1EKU/ay9/375FaKEbfs8=
+  dependencies:
+    co "^4.0.0"
+
+co@^4.0.0, co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
@@ -364,7 +383,7 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-to@^2.0.1:
+copy-to@^2.0.1, copy-to@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/copy-to/-/copy-to-2.0.1.tgz#2680fbb8068a48d08656b6098092bdafc906f4a5"
   integrity sha1-JoD7uAaKSNCGVrYJgJK9r8kG9KU=
@@ -373,6 +392,11 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+crc@~3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/crc/-/crc-3.5.0.tgz#98b8ba7d489665ba3979f59b21381374101a1964"
+  integrity sha1-mLi6fUiWZbo5efWbITgTdBAaGWQ=
 
 create-error-class@^3.0.0:
   version "3.0.2"
@@ -425,7 +449,7 @@ debug@^3.1.0, debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0, debug@^4.1.1:
+debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
   integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
@@ -481,7 +505,7 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-denque@^1.4.1, denque@^1.5.0:
+denque@^1.1.0, denque@^1.4.1, denque@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/denque/-/denque-1.5.0.tgz#773de0686ff2d8ec2ff92914316a47b73b1c73de"
   integrity sha512-CYiCSgIF1p6EUByQPlGkKnP1M9g0ZV3qMIrqMqZqdwazygIA/YP2vrbcyl1h/WppKJTdl1F85cXIle+394iDAQ==
@@ -895,6 +919,22 @@ ini@^1.3.4, ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
+ioredis@^4.14.1:
+  version "4.26.0"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.26.0.tgz#dbbfb5e5da085fc2b1de8174db50fa42f9fed66a"
+  integrity sha512-nh39okWezWWZ35/RxXXzHksMFt4WCaev8SNO2kozRDeVdEAJj16EarqPP3JeHz8IEjEXN5CiVtbWMk62Z0eveQ==
+  dependencies:
+    cluster-key-slot "^1.1.0"
+    debug "^4.3.1"
+    denque "^1.1.0"
+    lodash.defaults "^4.2.0"
+    lodash.flatten "^4.4.0"
+    p-map "^2.1.0"
+    redis-commands "1.7.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.1.0"
+
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/is-accessor-descriptor/-/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
@@ -1172,6 +1212,17 @@ koa-convert@^1.2.0:
     co "^4.6.0"
     koa-compose "^3.0.0"
 
+koa-generic-session@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/koa-generic-session/-/koa-generic-session-2.1.1.tgz#0f5b34ebad9ce635dc710650fb07dcd7fdf3416b"
+  integrity sha512-ZWsq0klIGnsDHcPWETTYVR4FKBRm+hMexJV7HxZdtALO54dQaOGV7GxMZSZNwnNqr9yVPldRUXDcJZsd9AHozw==
+  dependencies:
+    copy-to "~2.0.1"
+    crc "~3.5.0"
+    debug "~3.1.0"
+    parseurl "~1.3.1"
+    uid-safe "~2.1.4"
+
 koa-is-json@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
@@ -1202,6 +1253,16 @@ koa-onerror@^4.1.0:
   dependencies:
     escape-html "^1.0.3"
     stream-wormhole "^1.1.0"
+
+koa-redis@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/koa-redis/-/koa-redis-4.0.1.tgz#57ac1b46d9ab851221a9f4952c1e8d4bf289db40"
+  integrity sha512-o2eTVNo1NBnloeUGhHed5Q2ZvJSLpUEj/+E1/7oH5EmH8WuQ+QLdl/VawkshxdFQ47W1p6V09lM3hCTu7D0YnQ==
+  dependencies:
+    "@babel/runtime" "^7.8.3"
+    co-wrap-all "^1.0.0"
+    debug "^4.1.1"
+    ioredis "^4.14.1"
 
 koa-router@^7.4.0:
   version "7.4.0"
@@ -1279,6 +1340,16 @@ latest-version@^3.0.0:
   integrity sha1-ogU4P+oyKzO1rjsYq+4NwvNW7hU=
   dependencies:
     package-json "^4.0.0"
+
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+  integrity sha1-0JF4cW/+pN3p5ft7N/bwgCJ0WAw=
+
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+  integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
 
 lodash@^4.17.20:
   version "4.17.21"
@@ -1585,6 +1656,11 @@ p-finally@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
   integrity sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
 
+p-map@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
+  integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
+
 package-json@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/package-json/-/package-json-4.0.1.tgz#8869a0401253661c4c4ca3da6c2121ed555f5eed"
@@ -1595,7 +1671,7 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-parseurl@^1.3.2:
+parseurl@^1.3.2, parseurl@~1.3.1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
@@ -1698,6 +1774,11 @@ qs@^6.5.2:
   dependencies:
     side-channel "^1.0.4"
 
+random-bytes@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
+  integrity sha1-T2ih3Arli9P7lYSMMDJNt11kNgs=
+
 raw-body@^2.3.3:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.1.tgz#30ac82f98bb5ae8c152e67149dac8d55153b168c"
@@ -1740,7 +1821,7 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-redis-commands@^1.7.0:
+redis-commands@1.7.0, redis-commands@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.7.0.tgz#15a6fea2d58281e27b1cd1acfb4b293e278c3a89"
   integrity sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ==
@@ -1766,6 +1847,11 @@ redis@^3.1.0:
     redis-commands "^1.7.0"
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
+
+regenerator-runtime@^0.13.4:
+  version "0.13.7"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
+  integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
@@ -2031,6 +2117,11 @@ sqlstring@^2.3.2:
   resolved "https://registry.yarnpkg.com/sqlstring/-/sqlstring-2.3.2.tgz#cdae7169389a1375b18e885f2e60b3e460809514"
   integrity sha512-vF4ZbYdKS8OnoJAWBmMxCQDkiEBkGQYU7UZPtL8flbDRSNkhaXvRJ279ZtI6M+zDaQovVU4tuRgzK5fVhvFAhg==
 
+standard-as-callback@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
+  integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
@@ -2176,6 +2267,13 @@ type-is@^1.6.16:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
+
+uid-safe@~2.1.4:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/uid-safe/-/uid-safe-2.1.5.tgz#2b3d5c7240e8fc2e58f8aa269e5ee49c0857bd3a"
+  integrity sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==
+  dependencies:
+    random-bytes "~1.0.0"
 
 undefsafe@^2.0.2:
   version "2.0.3"
