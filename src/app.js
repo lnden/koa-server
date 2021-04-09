@@ -12,7 +12,7 @@ const { REDIS_CONF } = require('./conf/db')
 const { host, port } = REDIS_CONF
 
 // router
-const test = require('./routes/test')
+const demo = require('./routes/demo')
 
 // error handler
 onerror(app)
@@ -54,7 +54,7 @@ app.use(session({
 // })
 
 // routes
-app.use(test.routes(), test.allowedMethods())
+app.use(demo.routes(), demo.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
