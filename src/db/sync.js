@@ -3,6 +3,8 @@
  */
 const seq = require('./seq')
 
+require('./model/index')
+
 /**
  * @description 测试连接
  */

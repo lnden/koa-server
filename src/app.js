@@ -14,6 +14,8 @@ const { host, port } = REDIS_CONF
 
 // router
 const demo = require('./routes/demo')
+const userAPIRouter = require('./routes/api/user')
+const userViewRouter = require('./routes/view/user')
 const errorViewRouter = require('./routes/view/error')
 
 // error handler
@@ -63,7 +65,9 @@ app.use(session({
 
 // routes
 app.use(demo.routes(), demo.allowedMethods())
-app.use(errorViewRouter.routes(), errorViewRouter.allowedMethods())
+app.use(userAPIRouter.routes(), userAPIRouter.allowedMethods())
+app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
+app.use(errorViewRouter.routes(), errorViewRouter.allowedMethods()) // error/404 router
 
 // error-handling
 app.on('error', (err, ctx) => {
