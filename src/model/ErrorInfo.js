@@ -17,5 +17,10 @@ module.exports = {
   registerUserNameNotExistInfo: {
     errno: 10003,
     message: '用户名未存在'
+  },
+  // json schema 校验失败
+  jsonSchemaFileInfo: {
+    errno: 10009,
+    message: '数据格式校验错误'
   }
 }
