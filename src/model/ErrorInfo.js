@@ -28,6 +28,11 @@ module.exports = {
     errno: 10005,
     message: '您尚未登录'
   },
+  // 上传文件过大
+  uploadFileSizeFailInfo: {
+    errno: 10007,
+    message: '上传文件尺寸过大'
+  },
   // json schema 校验失败
   jsonSchemaFileInfo: {
     errno: 10009,
