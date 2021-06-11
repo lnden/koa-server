@@ -28,6 +28,11 @@ module.exports = {
     errno: 10005,
     message: '您尚未登录'
   },
+  // 修改密码失败 
+  changePasswordFailInfo: {
+    errno: 10007,
+    message: '修改密码失败，请重试'
+  },
   // 上传文件过大
   uploadFileSizeFailInfo: {
     errno: 10007,
