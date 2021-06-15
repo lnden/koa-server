@@ -1,6 +1,8 @@
 const router = require('koa-router')()
 const { loginRedirect, loginCheck } = require('../middlewares/loginChecks')
 
+router.prefix('/demo')
+
 router.get('/', loginRedirect, async (ctx, next) => {
   await ctx.render('demo', {
     title: 'hello koa 2!',
@@ -57,7 +59,6 @@ router.get('/loadMore/:userName/:pageIndex', async (ctx, next) => {
   }
 })
 
-// router.prefix('/users') //路由前缀
 router.post('/login', async (ctx, next) => {
   const { userName, password } = ctx.request.body
   ctx.body = {
