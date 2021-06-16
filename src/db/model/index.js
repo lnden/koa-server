@@ -4,6 +4,7 @@
 
 const User = require('./User')
 const Blog = require('./Blog')
+const UserRelation = require('./UserRelation')
 
 // 添加外键关系(一个用户拥有多个微博) 查询微博带出用户信息
 Blog.belongsTo(User, {
@@ -15,7 +16,16 @@ Blog.belongsTo(User, {
 // 查询用户带出微博的信息
 // User.hasMany(Blog)
 
+// 添加外键关系
+UserRelation.belongsTo(User, {
+  foreignKey: 'followerId'
+})
+User.hasMany(UserRelation, {
+  foreignKey: 'userId'
+})
+
 module.exports = {
   User,
-  Blog
+  Blog,
+  UserRelation
 }
