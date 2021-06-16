@@ -17,6 +17,7 @@ const { host, port } = REDIS_CONF
 
 // router
 const demo = require('./routes/demo')
+const blogSquareAPIRouter = require('./routes/api/blog-square')
 const blogProfileAPIRouter = require('./routes/api/blog-profile')
 const blogHomeAPIRouter = require('./routes/api/blog-home')
 const blogViewRouter = require('./routes/view/blog')
@@ -73,6 +74,7 @@ app.use(session({
 
 // routes
 app.use(demo.routes(), demo.allowedMethods())
+app.use(blogSquareAPIRouter.routes(), blogSquareAPIRouter.allowedMethods())
 app.use(blogProfileAPIRouter.routes(), blogProfileAPIRouter.allowedMethods)
 app.use(blogHomeAPIRouter.routes(), blogHomeAPIRouter.allowedMethods())
 app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods())
