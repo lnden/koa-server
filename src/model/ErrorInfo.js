@@ -52,6 +52,16 @@ module.exports = {
     errno: 10010,
     message: '删除用户失败'
   },
+  // 添加关注失败
+  addFollowerFailInfo: {
+    errno: 10011,
+    message: '添加关注失败'
+  },
+  // 取消关注失败
+  deleteFollowerFailInfo: {
+    errno: 10012,
+    message: '取消关注失败'
+  },
   // 创建微博失败
   createBlogFailInfo: {
     errno: 11001,
