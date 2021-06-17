@@ -39,6 +39,44 @@ async function getUsersByFollower(followerId) {
 }
 
 /**
+ * 获取关注人列表
+ * @param {number} userId 用户ID
+ */
+async function getFollowersByUser(userId) {
+  const result = await UserRelation.findAndCountAll({
+    order: [
+      ['id', 'desc']
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['id', 'userName', 'nickName', 'picture']
+      }
+    ],
+    where: {
+      userId
+    }
+  })
+
+  // result.count 总数
+  // result.rows 查询结果，数据
+
+  // 格式化
+  let userList = result.rows.map(row => row.dataValues)
+  userList = userList.map(item => {
+    let user = item.user
+    user = user.dataValues
+    user = formatUser(user)
+    return user
+  })
+
+  return {
+    count: result.count,
+    userList
+  }
+}
+
+/**
  * 添加关注关系
  * @param {number} userId 用户 id
  * @param {number} followerId 被关注用户 id 
@@ -69,6 +107,7 @@ async function deleteFollower(userId, followerId) {
 
 module.exports = {
   getUsersByFollower,
+  getFollowersByUser,
   addFollower,
   deleteFollower
 }
