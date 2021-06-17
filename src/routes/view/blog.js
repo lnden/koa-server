@@ -6,7 +6,7 @@ const router = require('koa-router')()
 const { loginRedirect } = require('../../middlewares/loginChecks')
 const { getProfileBlogList } = require('../../controller/blog-profile')
 const { getSquareBlogList } = require('../../controller/blog-square')
-const { isEXist } = require('../../controller/user')
+const { isExist } = require('../../controller/user')
 const { UserRelation } = require('../../db/model')
 const { getFans } = require('../../controller/user-relation')
 
@@ -37,7 +37,7 @@ router.get('/profile/:userName', loginRedirect, async (ctx, next) => {
     curUserInfo = myUserInfo
   } else {
     // 不是当前登录用户
-    const existResult = await isEXist(curUserName)
+    const existResult = await isExist(curUserName)
     if (existResult.errno !== 0) {
       // 用户名不存在
       return
