@@ -7,6 +7,12 @@
  * 每次测试用户重新登录，都需要更新这里的 cookie
  */
 module.exports = {
-  COOKIE: 'weibo:sid=dZYeKew_cBP3Ka0n2UWDcSI4oRP8tADN; weibo:sid.sig=PayRrMXEK3LXq3r91u53iae5oLY',
-  USER_NAME: 'admin'
+  COOKIE: 'weibo:sid=YmT-1Yzd34g9VY52lvBhnHighyQq6_HE; weibo:sid.sig=JiHmAPZkfu5mjLy3ICvaTCmqOic',
+  USER_NAME: 'admin',
+  Z_ID: 1,
+  Z_USER_NAME: 'admin',
+  Z_COOKIE: 'weibo:sid=YmT-1Yzd34g9VY52lvBhnHighyQq6_HE; weibo:sid.sig=JiHmAPZkfu5mjLy3ICvaTCmqOic',
+  L_ID: 2,
+  L_USER_NAME: 'lisi',
+  L_COOKIE: 'weibo:sid=yODm0GcTWuspplyzXA1c4ztFQ9w858hq; weibo:sid.sig=9c-uH7a-ezIg-1PKls_x5wm8WZE'
 }
