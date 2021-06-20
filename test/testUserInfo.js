@@ -10,7 +10,7 @@ module.exports = {
   COOKIE: 'weibo:sid=YmT-1Yzd34g9VY52lvBhnHighyQq6_HE; weibo:sid.sig=JiHmAPZkfu5mjLy3ICvaTCmqOic',
   USER_NAME: 'admin',
   Z_ID: 1,
-  Z_USER_NAME: 'admin',
+  Z_USER_NAME: 'zhangsan',
   Z_COOKIE: 'weibo:sid=YmT-1Yzd34g9VY52lvBhnHighyQq6_HE; weibo:sid.sig=JiHmAPZkfu5mjLy3ICvaTCmqOic',
   L_ID: 2,
   L_USER_NAME: 'lisi',

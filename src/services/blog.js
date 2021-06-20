@@ -47,6 +47,7 @@ async function getBlogListByUser({ userName, pageIndex = 0, pageSize = 10 }) {
 
   // 获取 dataValues
   let blogList = result.rows.map(row => row.dataValues)
+  blogList = formatBlog(blogList)
   blogList = blogList.map(blogItem => {
     const user = blogItem.user.dataValues
     blogItem.user = formatUser(user)
