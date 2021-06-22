@@ -22,7 +22,9 @@
                         blogList: blogData.blogList,
                         canReply: true
                     })%>
-                </div> <!-- 微博列表 结束 -->
+                </div> 
+                <!-- 微博列表 结束 -->
+
                 <!-- 加载更多 -->
                 <% if (blogData.count > blogData.blogList.length) { %>
                     <%- include('widgets/load-more', {
@@ -32,10 +34,11 @@
                         containerSelector: '#container-weibo-list',
                         api: '/api/atMe/loadMore',
                     })%>
-                <% } %> <!-- 加载更多 结束 -->
+                <% } %> 
+                <!-- 加载更多 结束 -->
             <% } %>
-
-        </div> <!-- 左侧结束 -->
+        </div>
+         <!-- 左侧结束 -->
     </div>
 </div>
 
