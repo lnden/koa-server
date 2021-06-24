@@ -3,7 +3,7 @@
  */
 
 const { getErrorPath } = require('ajv/dist/compile/util')
-const { get, set } = require('../redis/_redis')
+const { get, set } = require('./_redis')
 const { getBlogListByUser } = require('../services/blog')
 
 // redis key 前缀
