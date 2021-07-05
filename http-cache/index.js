@@ -1,8 +1,8 @@
-const Koa = require('koa');
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-const app = new Koa();
+const Koa = require('koa')
+const fs = require('fs')
+const path = require('path')
+const crypto = require('crypto')
+const app = new Koa()
 
 const mimes = {
   css: 'text/css',
@@ -54,7 +54,7 @@ const getFileStat = (filePath) => {
 }
 
 app.use(async (ctx) => {
-  const url = ctx.request.url;
+  const url = ctx.request.url
   if (url === '/') {
     // 访问根路径返回index.html
     ctx.set('Content-Type', 'text/html')
@@ -88,7 +88,7 @@ app.use(async (ctx) => {
     // if (ifModifiedSince === fileStat.mtime.toGMTString()) {
     //   ctx.status = 304
     // } else {
-    //   ctx.set('Last-Mdified', fileStat.mtime.toGMTString())
+    //   ctx.set('Last-Modified', fileStat.mtime.toGMTString())
     //   ctx.body = await parseStatic(filePath)
     // }
 
