@@ -17,7 +17,7 @@ const {
   deleteUserFailInfo,
   changeInfoFailInfo,
   changePasswordFailInfo
-} = require('../model/ErrorInfo')
+} = require('../model/error')
 const doCrypto = require('../utils/cryp')
 /**
  * 用户名是否存在

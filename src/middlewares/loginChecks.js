@@ -3,7 +3,7 @@
  */
 
 const { ErrorModel } = require('../model/ResModel')
-const { loginCheckFailInfo } = require('../model/ErrorInfo')
+const { loginCheckFailInfo } = require('../model/error')
 /**
  * API登录验证
  * @param {Object} ctx koa2 ctx 

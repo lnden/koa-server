@@ -3,7 +3,7 @@
  */
 
 const { ErrorModel } = require('../model/ResModel')
-const { jsonSchemaFileInfo } = require('../model/ErrorInfo')
+const { jsonSchemaUserDataFail } = require('../model/error')
 /**
  * 生成 json schema 验证的中间件
  * @param {function} userValidate 验证函数
@@ -16,7 +16,7 @@ function genValidator(validateFn) {
     const error = validateFn(data)
     if (error) {
       // 验证失败
-      ctx.body = new ErrorModel(jsonSchemaFileInfo)
+      ctx.body = new ErrorModel(jsonSchemaUserDataFail)
       return
     }
     // 验证成功， 继续

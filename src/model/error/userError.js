@@ -1,5 +1,5 @@
 /**
- * @description 失败信息集合 包括 errno 和 message
+ * @description 用户相关接口的错误信息
  */
 
 module.exports = {
@@ -42,11 +42,6 @@ module.exports = {
     errno: 10008,
     message: '修改基本信息失败'
   },
-  // json schema 校验失败
-  jsonSchemaFileInfo: {
-    errno: 10009,
-    message: '数据格式校验错误'
-  },
   // 删除用户失败
   deleteUserFailInfo: {
     errno: 10010,
@@ -62,9 +57,4 @@ module.exports = {
     errno: 10012,
     message: '取消关注失败'
   },
-  // 创建微博失败
-  createBlogFailInfo: {
-    errno: 11001,
-    message: '创建微博失败，请重试'
-  }
 }
