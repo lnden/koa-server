@@ -36,14 +36,23 @@ if (isProd) {
 }
 onerror(app, onerrorConf)
 
-// middlewares
+// 处理POST数据
 app.use(bodyparser({
   enableTypes: ['json', 'form', 'text']
 }))
+
+// 使得ctx.body可以接受一个json作为它的值
 app.use(json())
+
 app.use(logger())
-app.use(koaStatic(__dirname + '/public'))
-app.use(koaStatic(path.join(__dirname, '..', 'uploadFiles')))
+
+// 静态文件
+const staticPath = path.join(__dirname, '../public')
+app.use(koaStatic(staticPath))
+
+// 上传文件
+const uploadPath = path.join(__dirname, '../uploadFiles')
+app.use(koaStatic(uploadPath))
 
 app.use(views(__dirname + '/views', {
   extension: 'ejs'

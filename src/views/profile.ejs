@@ -19,12 +19,16 @@
 
                         <!-- 加载更多 -->
                         <% if (blogData.count> blogData.blogList.length) { %>
-                            <%- include('widgets/load-more', { pageSize: blogData.pageSize, pageIndex:
-                                blogData.pageIndex, count: blogData.count, containerSelector: '#container-weibo-list' ,
-                                api: '/api/profile/loadMore/' + userData.userInfo.userName, })%>
-                                <% } %>
-                                    <!-- 加载更多 结束 -->
-                                    <% } %>
+                            <%- include('widgets/load-more', { 
+                                pageSize: blogData.pageSize, 
+                                pageIndex: blogData.pageIndex,
+                                count: blogData.count, 
+                                containerSelector: '#container-weibo-list',
+                                api: '/api/profile/loadMore/' + userData.userInfo.userName, 
+                            })%>
+                        <% } %>
+                        <!-- 加载更多 结束 -->
+                    <% } %>
             </div>
             <!-- 左侧结束 -->
 
@@ -32,16 +36,25 @@
             <div class="col-4">
                 <!-- 个人信息 -->
                 <div class="right-item">
-                    <%- include('widgets/user-info', { userInfo: userData.userInfo, isMe: userData.isMe, amIFollowed:
-                        userData.amIFollowed, atCount: userData.atCount });%>
+                    <%- include('widgets/user-info', {
+                        userInfo: userData.userInfo,
+                        isMe: userData.isMe, 
+                        amIFollowed: userData.amIFollowed, 
+                        atCount: userData.atCount 
+                    });%>
                 </div>
 
                 <!-- 粉丝 -->
-                <%- include('widgets/fans', { count: userData.fansData.count, userList: userData.fansData.list })%>
+                <%- include('widgets/fans', {
+                    count: userData.fansData.count,
+                    userList: userData.fansData.list 
+                }) %>
 
-                    <!-- 关注 -->
-                    <%- include('widgets/followers', { count: userData.followersData.count, userList:
-                        userData.followersData.list })%>
+                <!-- 关注 -->
+                <%- include('widgets/followers', { 
+                    count: userData.followersData.count, 
+                    userList: userData.followersData.list
+                 })%>
             </div>
             <!-- 右侧结束 -->
         </div>

@@ -2,44 +2,44 @@
 <html>
 
 <head>
-  <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-  <h1><%= title %></h1>
-  <p> EJS Welcome to <%= title %></p>
+	<h1><%= title %></h1>
+	<p> EJS Welcome to <%= title %></p>
 
-  <hr>
-  <div>
-    <p><%= msg %></p>
-    <p><%= locals.name%></p>
-  </div>
+	<hr>
+	<div>
+		<p><%= msg %></p>
+		<p><%= locals.name%></p>
+	</div>
 
-  <hr>
-  <div>
-    <% if (isMe) { %>
-      <a href="#">@提到我的（3）</a>
-    <% } else { %>
-      <button>关注</button>
-    <% } %>
-  </div>
+	<hr>
+	<div>
+		<% if (isMe) { %>
+			<a href="#">@提到我的（3）</a>
+		<% } else { %>
+			<button>关注</button>
+		<% } %>
+	</div>
 
-  <hr>
-  <div>
-    <p>引入外部组件 include(pathName, params)</p>
-    <%- include('widget/user-info', {
-      isMe: !isMe
-    }) %>
-  </div>
+	<hr>
+	<div>
+		<p>引入外部组件 include(pathName, params)</p>
+		<%- include('widget/user-info', {
+			isMe: !isMe
+		}) %>
+	</div>
 
-  <hr>
-  <div>
-    <h4>使用 ejs 循环数据</h4>
-    <%- include('widget/blog-list', {
-      blogList: blogList
-    }) %>
-  </div>
+	<hr>
+	<div>
+		<h4>使用 ejs 循环数据</h4>
+		<%- include('widget/blog-list', {
+			blogList: blogList
+		}) %>
+	</div>
 </body>
 
 </html>
