@@ -1,31 +1,22 @@
-const path = require('path')
+// 常用模块
 const Koa = require('koa')
-const app = new Koa()
+const router = require('koa-router')()
+const path = require('path')
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
+const koaStatic = require('koa-static')
 const logger = require('koa-logger')
+
+// session和redis
 const session = require('koa-generic-session')
 const redisStore = require('koa-redis')
-const koaStatic = require('koa-static')
-
-const { REDIS_CONF } = require('./conf/db')
-const { isProd } = require('./utils/env')
+const { REDIS_CONF: { host, port } } = require('./conf/db')
 const { SESSION_SECRET_KEY } = require('./conf/cecretKeys')
-const { host, port } = REDIS_CONF
-
-// router
-const demo = require('./routes/demo')
-const atAPIRouter = require('./routes/api/blog-at')
-const blogSquareAPIRouter = require('./routes/api/blog-square')
-const blogProfileAPIRouter = require('./routes/api/blog-profile')
-const blogHomeAPIRouter = require('./routes/api/blog-home')
-const blogViewRouter = require('./routes/view/blog')
-const utilsAPIRouter = require('./routes/api/utils')
-const userAPIRouter = require('./routes/api/user')
-const userViewRouter = require('./routes/view/user')
-const errorViewRouter = require('./routes/view/error')
+const { isProd } = require('./utils/env')
+const InitRouter = require('./core/init')
+const app = new Koa()
 
 // error handler
 let onerrorConf = {}
@@ -83,16 +74,11 @@ app.use(session({
 // })
 
 // routes
-app.use(demo.routes(), demo.allowedMethods())
-app.use(atAPIRouter.routes(), atAPIRouter.allowedMethods())
-app.use(blogSquareAPIRouter.routes(), blogSquareAPIRouter.allowedMethods())
-app.use(blogProfileAPIRouter.routes(), blogProfileAPIRouter.allowedMethods)
-app.use(blogHomeAPIRouter.routes(), blogHomeAPIRouter.allowedMethods())
-app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods())
-app.use(utilsAPIRouter.routes(), utilsAPIRouter.allowedMethods())
-app.use(userAPIRouter.routes(), userAPIRouter.allowedMethods())
-app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
-app.use(errorViewRouter.routes(), errorViewRouter.allowedMethods()) // error/404 router
+InitRouter.init(app)
+router.get('*', async (ctx, next) => {
+  await ctx.render('404')
+})
+app.use(router.routes(), router.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
